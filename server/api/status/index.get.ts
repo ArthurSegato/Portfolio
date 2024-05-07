@@ -1,11 +1,7 @@
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   try {
-    return {
-      message: "online",
-    };
+    return { message: "up" };
   } catch (error) {
-    throw createError({
-      statusCode: 418,
-    });
+    throw createError({ statusCode: 418 });
   }
 });
