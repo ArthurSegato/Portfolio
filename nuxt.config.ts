@@ -42,6 +42,8 @@ export default defineNuxtConfig({
   },
   security: {
     headers: {
+      crossOriginEmbedderPolicy:
+        process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
       strictTransportSecurity: {
         maxAge: 31536000,
         includeSubdomains: true,
